@@ -1,16 +1,16 @@
 import PySimpleGUI as sg
 
-sg.theme('Dark red')
+sg.theme('Light blue')
 
 # layouts
 
 main_layout = [[sg.Text('Hello, what you would to do?',),
-                sg.Text(size=(20, 1), key='-OUTPUT-', )],
+                sg.Text(size=(40,35), key='-OUTPUT-', )],
                [sg.Button('Add expense'), sg.Button('Add income'), sg.Button('Quit')]]
 
 # windows
 
-main_window = sg.Window("Expense tracker", main_layout, grab_anywhere=True, size=(800, 600), text_justification='right')
+main_window = sg.Window("Expense tracker", main_layout, grab_anywhere=True, size=(400, 300), text_justification='center')
 win2_active = False
 win3_active = False
 i = 0
@@ -27,9 +27,10 @@ while True:
         layout_2 = [
             [sg.Text('How much money you spend that time?', justification='center'),
              sg.Text(size=(15, 1), key='-OUTPUT-')],
-            [sg.Text("Expense", relief=sg.RELIEF_RAISED), sg.Input(key='-EXPENSE-', background_color='white')],
-            [sg.CalendarButton("Data"), sg.Input(key='-DATA-', background_color='white')],
-            [sg.Text("Description"), sg.Input(key='-DESCRIPTION-', background_color='white')],
+            [sg.Text("Expense", relief=sg.RELIEF_RAISED), sg.Input(key='-EXPENSE-', background_color='white',
+            text_color='black')],
+            [sg.CalendarButton("Data"), sg.Input(key='-DATA-', background_color='white', text_color='black')],
+            [sg.Text("Description"), sg.Input(key='-DESCRIPTION-', background_color='white', text_color='black')],
             [sg.Button('Add expense'), sg.Button('Back')]
         ]
         window2 = sg.Window('Add expense', layout_2)
@@ -48,9 +49,10 @@ while True:
         layout_3 = [
             [sg.Text('How much money you earned that time?', justification='center'),
              sg.Text(size=(15, 1), key='-OUTPUT-')],
-            [sg.Text("Earned", relief=sg.RELIEF_RAISED), sg.Input(key='-EARN-', background_color='blue')],
-            [sg.Text("Data"), sg.Input(key='-DATA-', background_color='blue')],
-            [sg.Text("Description"), sg.Input(key='-DESCRIPTION-', background_color='blue')],
+            [sg.Text("Earned", relief=sg.RELIEF_RAISED), sg.Input(key='-EARN-', background_color='white',
+            text_color='black')],
+            [sg.CalendarButton("Data"), sg.Input(key='-DATA-', background_color='white', text_color='black')],
+            [sg.Text("Description"), sg.Input(key='-DESCRIPTION-', background_color='white', text_color='black')],
             [sg.Button('Add income'), sg.Button('Back')]
         ]
         window3 = sg.Window('Add expense', layout_3)
