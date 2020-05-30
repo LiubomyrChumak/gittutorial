@@ -5,7 +5,7 @@ sg.theme('Light blue')
 # layouts
 
 main_layout = [[sg.Text('Hello, what you would to do?',),
-                sg.Text(size=(40,35), key='-OUTPUT-', )],
+                sg.Text(size=(15,1), key='-OUTPUT-', )],
                [sg.Button('Add expense'), sg.Button('Add income'), sg.Button('Quit')]]
 
 # windows
